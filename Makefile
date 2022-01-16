@@ -55,3 +55,4 @@ VERSION = $(shell defaults read $(PWD)/build/Release/HoRNDIS.kext/Contents/Info.
 
 build/pkg/_complete: build/pkg/HoRNDIS-kext.pkg $(wildcard package/*)
 	productbuild --distribution package/Distribution.xml --package-path build/pkg --resources package --version $(VERSION) $(if $(CODESIGN_INST),--sign $(CODESIGN_INST)) build/HoRNDIS-$(VERSION).pkg && touch build/pkg/_complete
+
